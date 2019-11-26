@@ -32,7 +32,7 @@
 sudo su -
 
 #自动化安装命令
-wget -N https://raw.githubusercontent.com/frappe/bench/master/playbooks/w9install.py ; python w9install.py --production --user frappe 
+wget -N https://raw.githubusercontent.com/frappe/ansible-erpnext/blob/master/playbooks/w9install.py ; python w9install.py --production --user frappe 
 
 ```
 
