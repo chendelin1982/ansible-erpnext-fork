@@ -1,5 +1,5 @@
 ---
 - name: Install psutil
   pip: name=psutil state=latest
-  executable: pip3.3
+  executable: pip3
   
