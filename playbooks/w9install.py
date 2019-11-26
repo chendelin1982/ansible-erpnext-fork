@@ -137,7 +137,7 @@ def install_bench(args):
 	extra_vars.update(bench_name=bench_name)
 
 	# Will install ERPNext production setup by default
-	run_playbook('site.yml', sudo=True, extra_vars=extra_vars)
+	run_playbook('w9site.yml', sudo=True, extra_vars=extra_vars)
 
 	# # Will do changes for production if --production flag is passed
 	# if args.production:
