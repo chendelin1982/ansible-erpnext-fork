@@ -62,4 +62,4 @@ wget -N https://raw.githubusercontent.com/Websoft9/ansible-erpnext/master/playbo
 ## Issure
 
 * 2019-11-26 官方安装包中缺少 mysql-python, 通过 w9common roles 已解决
-* 2019-11-26 官方 TASK [psutil : Install psutil] 报错，暂未解决
+* 2019-11-26 官方 TASK [psutil : Install psutil] 报错，修正为：apt install python-psutil
