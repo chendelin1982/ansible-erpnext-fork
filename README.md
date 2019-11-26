@@ -57,7 +57,7 @@ wget -N https://raw.githubusercontent.com/Websoft9/ansible-erpnext/master/playbo
 
 * 同步官方项目
 * w9common,w9cloud, end 三个公共 roles 自动更新， w9erpnext 项目 roles 质量检查
-* /playbook/w9install.py 文件对比官方 /playbook/install.py，及时修正差异
+* /playbook/w9install.py 文件对比官方 /playbook/install.py，及时修正差异，保证合并后可用
 
 ## Issure
 
