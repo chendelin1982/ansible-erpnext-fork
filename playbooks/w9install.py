@@ -1,3 +1,7 @@
+# Wesoft9修改处：
+# 1. 项目URL地址 https://github.com/frappe/bench 更改为 https://github.com/websoft9/ansible-erpnext
+# 2. 去掉数据库交互式密码问答，将root和ERPNext数据库管理密码直接设置为 123456 和 admin
+
 # wget setup_frappe.py | python3
 import os, sys, subprocess, getpass, json, multiprocessing, shutil, platform
 from distutils.spawn import find_executable
