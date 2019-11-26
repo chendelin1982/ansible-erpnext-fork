@@ -32,7 +32,7 @@
 sudo su -
 
 #自动化安装命令
-wget -N https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.py ; python install.py --production --user frappe 
+wget -N https://raw.githubusercontent.com/frappe/bench/master/playbooks/w9install.py ; python w9install.py --production --user frappe 
 
 ```
 
@@ -53,5 +53,5 @@ wget -N https://raw.githubusercontent.com/frappe/bench/master/playbooks/install.
 
 ## Issure
 
-2019-11-26 官方安装包中缺少 mysql-python, 通过 w9common roles 已解决
-2019-11-26 官方 TASK [psutil : Install psutil] 报错
+* 2019-11-26 官方安装包中缺少 mysql-python, 通过 w9common roles 已解决
+* 2019-11-26 官方 TASK [psutil : Install psutil] 报错，暂未解决
