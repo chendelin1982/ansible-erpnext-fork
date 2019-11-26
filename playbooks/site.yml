@@ -17,7 +17,7 @@
     - { role: dns_caching,       tags: dns_caching,      when: production                   }
     - { role: ntpd,              tags: ntpd,             when: production                   }
     - { role: wkhtmltopdf,       tags: wkhtmltopdf                                          }
-    - { role: psutil,            tags: psutil                                               }
+    #- { role: psutil,            tags: psutil                                               }
     - { role: redis,             tags: redis                                                }
     - { role: supervisor,        tags: supervisor,       when: production                   }
     - { role: nginx,             tags: nginx,            when: production                   }
