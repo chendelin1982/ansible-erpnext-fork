@@ -51,6 +51,14 @@ wget -N https://raw.githubusercontent.com/Websoft9/ansible-erpnext/master/playbo
 - 命令脚本部署与镜像部署有什么区别？请参考[镜像部署-vs-脚本部署](https://support.websoft9.com/docs/faq/zh/bz-product.html#镜像部署-vs-脚本部署)
 - 本项目支持在 Ansible Tower 上运行吗？支持
 
+## 项目维护
+
+本项目需要定期维护，主要工作包括：
+
+* 同步官方项目
+* w9common,w9cloud, end 三个公共 roles 自动更新， w9erpnext 项目 roles 质量检查
+* /playbook/w9install.py 文件对比官方 /playbook/install.py，及时修正差异
+
 ## Issure
 
 * 2019-11-26 官方安装包中缺少 mysql-python, 通过 w9common roles 已解决
