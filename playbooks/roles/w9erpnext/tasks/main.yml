@@ -1,0 +1,71 @@
+---
+- name: change Nginx User
+  lineinfile:
+    path:  /etc/nginx/nginx.conf
+    regexp: 'user www-data;'
+    line: 'user frapper;'
+
+- name: Retart Nginx
+  service:
+      name: nginx 
+      enabled: yes
+      state: restarted
+
+
+- name: change permission of password.txt 
+  file:
+    path: /home/frapper/passwords.txt
+    state: absent
+
+- name: Setting rc.local
+  file:
+    path: /etc/rc.local
+    state: touch
+    mode: 0750
+
+- name: Write rc.local
+  shell: echo "#!/bin/bash" > /etc/rc.local
+
+- name: restart rc.local
+  service: name=rc.local state=restarted enabled=yes
+
+- name: Create credentials Folder
+  file:
+    path: /credentials
+    state: directory
+
+- name: Create Password doc
+  file:
+    path: /credentials/password.txt
+    mode: 644
+    state: touch
+
+- name: Write Databases Password
+  shell: echo -e 'MySQL username:root\nMySQL Password:'{{mysql_password}}  > /credentials/password.txt
+
+- name: Databases Random Password
+  copy: 
+    src: init.sh
+    dest: /root/
+    mode: 0750
+
+- name: Setting Startup
+  lineinfile:
+    path: /etc/rc.local
+    regexp: '/root/init.sh'
+    line: '/root/init.sh'
+    mode: 0750
+
+
+- name: Setting File Permission
+  shell: chown -R frapper. /home/frapper/.bench/bench.egg-info
+
+- name: del mysql Automatically generated for Debian scripts.
+  file:
+    path: /etc/mysql/debian.cnf
+    state: absent
+
+- name: Remove SSH info
+  file: 
+    path: /home/frapper/.ssh
+    state: absent
