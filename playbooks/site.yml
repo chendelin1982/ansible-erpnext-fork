@@ -5,6 +5,7 @@
   become: yes
   become_user: root
   roles:
+    - { role: w9common,          tags: w9common                                             }
     - { role: common,            tags: common                                               }
     - { role: locale,            tags: locale                                               }
     - { role: mariadb,           tags: mariadb                                              }
@@ -21,7 +22,9 @@
     - { role: supervisor,        tags: supervisor,       when: production                   }
     - { role: nginx,             tags: nginx,            when: production                   }
     - { role: fail2ban,          tags: fail2ban,         when: production                   }
-    - { role: w9erpnext,          tags: w9erpnext,       when: production                   }
+    - { role: w9erpnext,         tags: w9erpnext,        when: production                   }
+    #- { role: cloud,            tags: cloud,            when: production                   }
+    #- { role: end,              tags: end,              when: production                   }
   tasks:
     - name: Set hostname
       hostname: name='{{ hostname }}'
